@@ -1,10 +1,1 @@
-{
-    "org.apache.cordova.device-orientation": {
-        "source": {
-            "type": "registry",
-            "id": "org.apache.cordova.device-orientation"
-        },
-        "is_top_level": true,
-        "variables": {}
-    }
-}
+{}

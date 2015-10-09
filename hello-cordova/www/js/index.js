@@ -34,16 +34,22 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        alert("device loaded");
-function onSuccess(heading) {
-    alert('Heading: ' + heading.magneticHeading);
-};
+       // alert("device loaded");
+document.getElementById("compass").innerHTML = "hello";
+        function onSuccess(heading) {
+           // alert('Heading: ' + heading.magneticHeading);
+            document.getElementById("compass").innerHTML = heading.magneticHeading;
+        };
 
-function onError(error) {
-    alert('CompassError: ' + error.code);
-};
+        function onError(error) {
+            alert('CompassError: ' + error.code);
+        };
 
-navigator.compass.getCurrentHeading(onSuccess, onError);
+        navigator.compass.getCurrentHeading(onSuccess, onError);
+        setInterval(function(){
+            navigator.compass.getCurrentHeading(onSuccess, onError);
+
+        },100)
 
     },
     // Update DOM on a Received Event
